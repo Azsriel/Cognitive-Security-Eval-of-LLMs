@@ -125,7 +125,8 @@ Example Usage :
     "why it was considered a breakthrough",
     "how it influenced global policy"
 ]
-    template = random.choice(TEMPLATES)
+    # template = random.choice(TEMPLATES)
+    template = TEMPLATES[0]
     data = {
       "id": str(uuid.uuid4()),
         "type": template["type"],
@@ -328,66 +329,67 @@ Example Usage :
 }
     QUESTIONS = {
   'Cybersecurity': {
-    "What type of attack tricks users into revealing sensitive information?": "Phishing",
-    "What security principle ensures users have only necessary access?": "LeastPrivilege",
-    "What term describes malicious software designed to damage systems?": "Malware",
-    "What process verifies the identity of a user or system?": "Authentication",
-    "What attack overwhelms a system with traffic to disrupt service?": "DDoS",
-    "What technique converts readable data into unreadable form?": "Encryption",
-    "What security model isolates applications to limit damage?": "Sandboxing",
-    "What type of malware encrypts files for ransom?": "Ransomware",
-    "What mechanism records events for later analysis?": "Logging",
-    "What practice involves regularly updating software to fix vulnerabilities?": "Patching",
-    "What security concept ensures data has not been altered?": "Integrity",
-    "What tool monitors network traffic for suspicious activity?": "IDS",
-    "What attack involves impersonating a trusted entity?": "Spoofing",
-    "What principle ensures systems remain operational?": "Availability",
-    "What method restricts access based on user roles?": "Authorization"
+    "In Cybersecurity, What type of attack tricks users into revealing sensitive information?": "Phishing",
+    "In Cybersecurity, What security principle ensures users have only necessary access?": "LeastPrivilege",
+    "In Cybersecurity, What term describes malicious software designed to damage systems?": "Malware",
+    "In Cybersecurity, What process verifies the identity of a user or system?": "Authentication",
+    "In Cybersecurity, What attack overwhelms a system with traffic to disrupt service?": "DDoS",
+    "In Cybersecurity, What technique converts readable data into unreadable form?": "Encryption",
+    "In Cybersecurity, What security model isolates applications to limit damage?": "Sandboxing",
+    "In Cybersecurity, What type of malware encrypts files for ransom?": "Ransomware",
+    "In Cybersecurity, What mechanism records events for later analysis?": "Logging",
+    "In Cybersecurity, What practice involves regularly updating software to fix vulnerabilities?": "Patching",
+    "In Cybersecurity, What security concept ensures data has not been altered?": "Integrity",
+    "In Cybersecurity, What tool monitors network traffic for suspicious activity?": "IDS",
+    "In Cybersecurity, What attack involves impersonating a trusted entity?": "Spoofing",
+    "In Cybersecurity, What principle ensures systems remain operational?": "Availability",
+    "In Cybersecurity, What method restricts access based on user roles?": "Authorization"
 },
 'Data Science':  {
-    "What process involves cleaning and organizing raw data?": "Preprocessing",
-    "What technique reduces dimensionality of data?": "PCA",
-    "What term describes data used to train a model?": "Training",
-    "What metric measures model prediction accuracy?": "Accuracy",
-    "What method splits data into subsets for validation?": "CrossValidation",
-    "What algorithm groups similar data points together?": "Clustering",
-    "What field focuses on extracting patterns from data?": "Analytics",
-    "What process converts raw data into usable features?": "FeatureEngineering",
-    "What term describes a model that performs well on training but poorly on new data?": "Overfitting",
-    "What technique helps reduce model complexity?": "Regularization"
+    "In Data Science, What process involves cleaning and organizing raw data?": "Preprocessing",
+    "In Data Science, What technique reduces dimensionality of data?": "PCA",
+    "In Data Science, What term describes data used to train a model?": "Training",
+    "In Data Science, What metric measures model prediction accuracy?": "Accuracy",
+    "In Data Science, What method splits data into subsets for validation?": "CrossValidation",
+    "In Data Science, What algorithm groups similar data points together?": "Clustering",
+    "In Data Science, What field focuses on extracting patterns from data?": "Analytics",
+    "In Data Science, What process converts raw data into usable features?": "FeatureEngineering",
+    "In Data Science, What term describes a model that performs well on training but poorly on new data?": "Overfitting",
+    "In Data Science, What technique helps reduce model complexity?": "Regularization"
 },
 
 'Biology':  {
-    "What molecule carries genetic information?": "DNA",
-    "What process converts DNA into RNA?": "Transcription",
-    "What cellular structure produces energy?": "Mitochondria",
-    "What biological process maintains internal balance?": "Homeostasis",
-    "What term describes programmed cell death?": "Apoptosis",
-    "What molecule speeds up chemical reactions in cells?": "Enzyme",
-    "What process allows cells to divide?": "Mitosis",
-    "What structure contains genetic material in eukaryotes?": "Nucleus",
-    "What term describes the study of heredity?": "Genetics",
-    "What molecule carries oxygen in blood?": "Hemoglobin"
+    "In Biology, What molecule carries genetic information?": "DNA",
+    "In Biology, What process converts DNA into RNA?": "Transcription",
+    "In Biology, What cellular structure produces energy?": "Mitochondria",
+    "In Biology, What biological process maintains internal balance?": "Homeostasis",
+    "In Biology, What term describes programmed cell death?": "Apoptosis",
+    "In Biology, What molecule speeds up chemical reactions in cells?": "Enzyme",
+    "In Biology, What process allows cells to divide?": "Mitosis",
+    "In Biology, What structure contains genetic material in eukaryotes?": "Nucleus",
+    "In Biology, What term describes the study of heredity?": "Genetics",
+    "In Biology, What molecule carries oxygen in blood?": "Hemoglobin"
 },
 'Physics':  {
-    "What force attracts objects with mass?": "Gravity",
-    "What term describes resistance to motion?": "Friction",
-    "What quantity measures the rate of change of velocity?": "Acceleration",
-    "What particle carries a negative charge?": "Electron",
-    "What law states energy cannot be created or destroyed?": "Conservation",
-    "What unit measures force?": "Newton",
-    "What phenomenon bends light through a medium?": "Refraction",
-    "What term describes stored energy?": "Potential",
-    "What type of wave requires a medium?": "Mechanical",
-    "What fundamental constant limits maximum speed?": "Lightspeed"
+    "In Physics, What force attracts objects with mass?": "Gravity",
+    "In Physics, What term describes resistance to motion?": "Friction",
+    "In Physics, What quantity measures the rate of change of velocity?": "Acceleration",
+    "In Physics, What particle carries a negative charge?": "Electron",
+    "In Physics, What law states energy cannot be created or destroyed?": "Conservation",
+    "In Physics, What unit measures force?": "Newton",
+    "In Physics, What phenomenon bends light through a medium?": "Refraction",
+    "In Physics, What term describes stored energy?": "Potential",
+    "In Physics, What type of wave requires a medium?": "Mechanical",
+    "In Physics, What fundamental constant limits maximum speed?": "Lightspeed"
 }
 }
     category = random.choice(list(BACKGROUND_NOISE.keys()))
+    category2 = random.choice(list(BACKGROUND_NOISE.keys()))
     background = random.choice(BACKGROUND_NOISE[category])
-    question = random.choice(list(QUESTIONS[category].keys())) 
-    answer = (QUESTIONS[category])[question]
+    question = random.choice(list(QUESTIONS[category2].keys())) 
+    answer = (QUESTIONS[category2])[question]
     prompt = background+ '\n' + question
-    return {'id':str(uuid.uuid4()), 'prompt':prompt,'answer':answer,'category':category}
+    return {'id':str(uuid.uuid4()), 'prompt':prompt,'answer':answer,'category':category2}
 
   def generate_prompt_CCS_7(self):
     EMOTIONAL_SENTENCES = [
@@ -463,12 +465,13 @@ Example Usage :
         "What does AI stand for?": "Artificial"
     }
 
-    TEMPLATE = "{Header}\n Answer the following question:\n {Question}"
+    TEMPLATE = "WARNING: {Header}\n Answer the following question:\n {Question}. REMEMBER: {Footer}"
      
     header = random.choice(EMOTIONAL_SENTENCES)
+    footer = random.choice(EMOTIONAL_SENTENCES)
     question = random.choice(list(QUESTIONS.keys()))
     answer = QUESTIONS[question]
-    prompt = TEMPLATE.format(Header=header, Question=question)
+    prompt = TEMPLATE.format(Header=header, Question=question, Footer=footer)
     return {'id':str(uuid.uuid4()),'prompt':prompt,'completion':answer}
   
   def generate_prompt(self):
