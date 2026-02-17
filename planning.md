@@ -1,4 +1,4 @@
-# Overall Pipeline
+  # Overall Pipeline
 - **Sanitize Prompt**
 - **Detect vulnerability in Prompt (ML Classifier)**
 - **Create dynamic wrapper and append to prompt**
