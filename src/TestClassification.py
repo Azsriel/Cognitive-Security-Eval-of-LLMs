@@ -1,6 +1,6 @@
 from openai import OpenAI
 import json, re
-from DataGen import DataGenCCS
+from DataGen2 import DataGenCCS
 
 client = OpenAI(
     base_url="http://localhost:1234/v1",
@@ -99,20 +99,20 @@ for data in Data:
 
 # Using Generator
 
-DataGen_ccs_1 = DataGenCCS(CCS_Type=4)
-Data = DataGen_ccs_1.generate_dataset(5)
-for data in Data:
+#DataGen_ccs_1 = DataGenCCS()
+#Data = DataGen_ccs_1.generate_balanced_dataset(5)
+#for data in Data:
     # print(data['prompt'])                             # this is for CCS-1 , 2 , 6 , 7
     # print(data['attack_prompt'])                      # this is for CCS-3
-    print(data[0]['attack_prompt'])                   # this is for CCS-4
+   #  print(data[0]['attack_prompt'])                   # this is for CCS-4
     # print(data)                                       # this is for CCS-5
-    print()
+   # print()
     # score = classify_prompt(data['prompt'])           # this is for CCS-1 , 2 , 6 , 7
     # score = classify_prompt(data['attack_prompt'])    # this is for CCS-3
-    score = classify_prompt(data[0]['attack_prompt']) # this is for CCS-4
+   # score = classify_prompt(data[0]['attack_prompt']) # this is for CCS-4
     # score = classify_prompt(data)                     # this is for CCS-5
-    print(score)
-    print("-------------------------------------------------------------------------------------")
+   # print(score)
+   #print("-------------------------------------------------------------------------------------")
 
 
 """
@@ -135,3 +135,13 @@ CCS-4 mostly shows authority which makes sense looking at prompts
 CCS-6 still doesnt work
 CCS-7 is giving very small results
 """
+
+# Edits made by Shamshuddeen Date:15th March 2026
+# refactored code for datagen merged properly idk why it was different before need to check things once again
+# on the website it has the old code but on my local it has the new code.
+# I pushed the new code for sure but idk what happened 
+if __name__ == "__main__":
+    Data= DataGenCCS().generate_balanced_dataset(5)
+    prompts = Data['prompt']
+    classification = classify_prompt(prompts[0])
+    print(classification)
