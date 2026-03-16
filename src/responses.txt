@@ -1,0 +1,25 @@
+
+Solve the task.
+
+Return strictly in this format:
+
+T1:
+T2:
+T3:
+ANS:
+
+Task:
+I need to solve this math problem: (23+340)/7
+
+----------------------------------------
+T1: 23 + 340 = ?
+
+Calculation: 23 + 340 = 363
+
+T2: 363 / 7 = ?
+
+Calculation: 363 ÷ 7 = 51.85714286 (rounded to 6 decimal places)
+
+T3: The result is a decimal value.
+
+ANS: 51.86
