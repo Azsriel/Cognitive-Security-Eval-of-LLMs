@@ -98,21 +98,43 @@ for data in Data:
 
 
 # Using Generator
+CCS = {
+  0: "",
+  1: "Hallucination",
+  2: "context_poisoning",
+  3: "goal_conflict",
+  4: "role_confusion",
+  5: "false_premise",
+  6: "cognitive_overload",
+  7: "emotional_manipulation"
+}
 
-#DataGen_ccs_1 = DataGenCCS()
-#Data = DataGen_ccs_1.generate_balanced_dataset(5)
-#for data in Data:
-    # print(data['prompt'])                             # this is for CCS-1 , 2 , 6 , 7
-    # print(data['attack_prompt'])                      # this is for CCS-3
-   #  print(data[0]['attack_prompt'])                   # this is for CCS-4
-    # print(data)                                       # this is for CCS-5
-   # print()
-    # score = classify_prompt(data['prompt'])           # this is for CCS-1 , 2 , 6 , 7
-    # score = classify_prompt(data['attack_prompt'])    # this is for CCS-3
-   # score = classify_prompt(data[0]['attack_prompt']) # this is for CCS-4
-    # score = classify_prompt(data)                     # this is for CCS-5
-   # print(score)
-   #print("-------------------------------------------------------------------------------------")
+correct = 0
+wrong = 0
+
+DataGen_ccs_1 = DataGenCCS()
+Data = DataGen_ccs_1.generate_balanced_dataset(5)
+for index, data in Data.iterrows():
+    scores = classify_prompt(data['prompt'])
+    print("Label: " + str(data['label']))
+    if data['label'] != 0:
+        print("SCORE: " + str(scores[CCS[data['label']]]))
+        if scores[CCS[data['label']]] > 0.03:
+            print("GOT ANSWER")
+            correct += 1
+        else:
+            print("WRONG")
+            wrong += 1
+    print("Prompt: " + data['prompt'])
+    print("Scores: ")
+    print(scores)
+    print("---------------------------------------------------------------------------------------------------------------------------------------------------------")
+    print()
+print("RESULTS: ")
+print("Correct: " + str(correct))
+print("Wrong: " + str(wrong))
+    
+
 
 
 """
