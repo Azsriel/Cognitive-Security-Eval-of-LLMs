@@ -1,0 +1,3 @@
+Took 2601.97 seconds
+Took 1355.81 seconds
+Took 118.03 seconds
