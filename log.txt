@@ -1,3 +1,6 @@
 Took 2601.97 seconds
 Took 1355.81 seconds
 Took 118.03 seconds
+Took 1945.97 seconds
+Took 2821.58 seconds
+Took 4464.77 seconds

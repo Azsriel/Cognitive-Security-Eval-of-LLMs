@@ -75,7 +75,7 @@ def process_prompt(prompt, id = -1, filename = "output.csv", without_pipeline = 
         # ── Main call ─────────────────────────────────────────────────────────────
         main_response = call_llm(
             system_prompt = wrapped.main_system,
-            user_message  = wrapped.original_prompt,
+            user_message  = wrapped.main_system + wrapped.original_prompt,
             model         = wrapped.verifier_model
         )
     else:
@@ -104,7 +104,6 @@ def process_prompt(prompt, id = -1, filename = "output.csv", without_pipeline = 
             "label"           : wrapped.label,
             "vulnerability"   : wrapped.vulnerability,
             "main_response"   : main_response,
-            "verify_response" : verify_response,
             "verdict"         : verdict["verdict"],    # "PASS", "WARN", "FAIL", "UNKNOWN"
             "reasoning"       : verdict["reasoning"]
     }
@@ -137,8 +136,8 @@ def process_rows(filepath, row_numbers, pipeline = True, output_file = "output.c
     for result in results:
         process_prompt(result["prompt"], result["id"], without_pipeline=not pipeline, filename=output_file)
 
-process_rows("dataset.csv", [i for i in range(89,101)], pipeline=True, output_file="output.csv")
-process_rows("dataset.csv", [i for i in range(26 ,101)], pipeline=False, output_file="output_normal.csv")
+process_rows("dataset_2.csv", [i for i in range(159, 201)], pipeline=True, output_file="output_final.csv")
+process_rows("dataset_2.csv", [i for i in range(101, 201)], pipeline=False, output_file="output_final_normal.csv")
 
 elapsed = time.time() - start
 
