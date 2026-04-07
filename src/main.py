@@ -136,8 +136,8 @@ def process_rows(filepath, row_numbers, pipeline = True, output_file = "output.c
     for result in results:
         process_prompt(result["prompt"], result["id"], without_pipeline=not pipeline, filename=output_file)
 
-process_rows("dataset_2.csv", [i for i in range(159, 201)], pipeline=True, output_file="output_final.csv")
-process_rows("dataset_2.csv", [i for i in range(101, 201)], pipeline=False, output_file="output_final_normal.csv")
+#process_rows("dataset_2.csv", [i for i in range(159, 201)], pipeline=True, output_file="output_final.csv")
+process_rows("dataset_2.csv", [i for i in range(165, 201)], pipeline=False, output_file="output_final_normal.csv")
 
 elapsed = time.time() - start
 

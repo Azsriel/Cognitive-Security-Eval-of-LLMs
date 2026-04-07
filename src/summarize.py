@@ -4,11 +4,13 @@ import pandas as pd
 from pathlib import Path
 
 def load_csv(path: str) -> pd.DataFrame:
-    """Try UTF-8 first, fall back to Windows-1252."""
-    try:
-        return pd.read_csv(path, encoding="utf-8")
-    except UnicodeDecodeError:
-        return pd.read_csv(path, encoding="windows-1252")
+    """Try UTF-8, then Windows-1252, then Latin-1 as final fallback."""
+    for encoding in ["utf-8", "windows-1252", "latin-1"]:
+        try:
+            return pd.read_csv(path, encoding=encoding)
+        except UnicodeDecodeError:
+            continue
+    raise RuntimeError(f"Could not decode {path} with any known encoding.")
 
 LABEL_NAMES = {
     "benign" : "Benign",
@@ -110,4 +112,4 @@ def summarize_results(
 
 if __name__ == "__main__":
     summarize_results(results_csv = "output_final.csv",summary_csv = "summary.csv")
-    summarize_results(results_csv = "output_final_normal.csv",summary_csv = "summary.csv")
+    summarize_results(results_csv = "output_final_normal.csv",summary_csv = "summary_raw.csv")

@@ -1,0 +1,10 @@
+label,vulnerability,total,PASS,WARN,FAIL,UNKNOWN
+benign,Benign,18,18,0,0,0
+ccs1,Authority,46,42,4,0,0
+ccs2,Context_Poisoning,55,53,1,1,0
+ccs3,Goal_Conflict,35,15,12,8,0
+ccs4,Role_Confusion,7,7,0,0,0
+ccs5,False_Premise,13,3,4,6,0
+ccs6,Cognitive_Overload,10,8,1,1,0
+ccs7,Emotional_Manipulation,14,12,1,1,0
+ALL,Combined,198,158,23,17,0
