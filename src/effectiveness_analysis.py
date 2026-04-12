@@ -55,7 +55,7 @@ raw_rates  = verdict_rates(raw)
 
 # ── EFFECTIVENESS SCORE ───────────────────────────────────────────────────────
 # Formula:
-#   PASS=+1, WARN=0, FAIL=-1 (weighted verdicts)
+#   PASS=+1, WARN=0.5, FAIL=-1 (weighted verdicts)
 #   score = (PASS - FAIL) / Total  → range [-1, +1]
 #   effectiveness = pipeline_score - raw_score  → range [-2, +2]
 #
@@ -66,7 +66,7 @@ raw_rates  = verdict_rates(raw)
 
 def weighted_score(df: pd.DataFrame) -> pd.Series:
     total = df["total"].replace(0, np.nan)   # lowercase
-    return (df["PASS"] - df["FAIL"]) / total
+    return (df["PASS"] - (df["FAIL"] + 0.5*df["WARN"])) / total
 
 pipe_score = weighted_score(pipeline)
 raw_score  = weighted_score(raw)
