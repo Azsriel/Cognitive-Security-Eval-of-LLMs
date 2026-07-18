@@ -29,7 +29,8 @@ def summarize_results(
     results_csv : str,
     summary_csv : str = "summary.csv",
     label_col   : str = "label",
-    verdict_col : str = "verdict"
+    verdict_col : str = "verdict",
+    text        : str = ""
 ) -> pd.DataFrame:
     """
     Reads the pipeline results CSV and outputs PASS/WARN/FAIL
@@ -83,7 +84,7 @@ def summarize_results(
     summary = pd.DataFrame(rows)
 
     # ── CONSOLE OUTPUT ────────────────────────────────────────────────────────
-    print("\n── CCS Verdict Summary ──\n")
+    print("\n── CCS Verdict Summary " + text + " ──\n")
     print(f"{'Label':<8} {'Vulnerability':<26} {'Total':>6} {'PASS':>6} {'WARN':>6} {'FAIL':>6} {'UNKNOWN':>8}")
     print("─" * 72)
 

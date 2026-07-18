@@ -140,8 +140,8 @@ def process_rows(filepath, row_numbers, pipeline = True, output_file = "output.c
 process_rows("dataset_demo.csv", [i for i in range(8)], pipeline=True, output_file="output_demo.csv")
 process_rows("dataset_demo.csv", [i for i in range(8)], pipeline=False, output_file="output_demo_normal.csv")
 
-summarize_results(results_csv = "output_demo.csv",summary_csv = "summary_demo.csv")
-summarize_results(results_csv = "output_demo_normal.csv",summary_csv = "summary_demo_raw.csv")
+summarize_results(results_csv = "output_demo.csv",summary_csv = "summary_demo.csv", text="With Pipeline")
+summarize_results(results_csv = "output_demo_normal.csv",summary_csv = "summary_demo_raw.csv", text="Without Pipeline")
 
 elapsed = time.time() - start
 

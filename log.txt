@@ -5,3 +5,17 @@ Took 1945.97 seconds
 Took 2821.58 seconds
 Took 4464.77 seconds
 Took 1400.81 seconds
+Took 511.11 seconds
+Took 516.61 seconds
+Took 224.46 seconds
+Took 173.01 seconds
+Took 239.97 seconds
+Took 225.59 seconds
+Took 199.07 seconds
+Took 213.89 seconds
+Took 164.87 seconds
+Took 167.46 seconds
+Took 242.18 seconds
+Took 203.32 seconds
+Took 248.83 seconds
+Took 551.17 seconds
